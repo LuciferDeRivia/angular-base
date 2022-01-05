@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent {
-  agregar(event: any) {
-    event.preventDefault();
-    console.log('agregar');
+  agregar() {
+    console.log('prueba');
   }
 }
