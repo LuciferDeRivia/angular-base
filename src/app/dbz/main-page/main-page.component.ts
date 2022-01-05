@@ -22,4 +22,8 @@ export class MainPageComponent {
     nombre: '',
     poder: 0,
   };
+
+  agregarNuevoPersonaje(personaje: Personaje) {
+    this.personajes.push(personaje);
+  }
 }
