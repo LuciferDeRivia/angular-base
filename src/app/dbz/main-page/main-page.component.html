@@ -3,39 +3,11 @@
 
 <div class="row">
   <div class="col">
-    <h3>Personajes</h3>
-    <hr />
-    <ul>
-      <li *ngFor="let personaje of personajes">
-        <!-- pipes number, sirve para transformar visualmente un dato -->
-        {{ personaje.nombre }} - {{ personaje.poder | number }}
-      </li>
-    </ul>
+    <!-- lo asociamos a una propiedad de la clase, heredamos personajes a app-personajes -->
+    <app-personajes [personajes]="personajes"></app-personajes>
   </div>
 
   <div class="col">
-    <h3>Agregar</h3>
-    <hr />
-    <form (ngSubmit)="agregar()">
-      <!-- Indicamos que ese value apunte a la propiedad de la clase y al objeto nuevo -->
-      <!-- <input type="text" placeholder="Nombre" [value]="nuevo"/> -->
-      <!-- Se utilizan llaves cuadradas para establecer una propiedad a la etiqueta-->
-      <!-- Se utilizan parentecis para establecer un evento a la etiqueta-->
-      <input
-        type="text"
-        placeholder="Nombre"
-        name="nombre"
-        [(ngModel)]="nuevo.nombre"
-      />
-      <!-- [value]="nuevo.nombre"
-        (input)="cambiarNombre($event)" -->
-      <input
-        type="number"
-        placeholder="Poder"
-        name="poder"
-        [(ngModel)]="nuevo.poder"
-      />
-      <button type="submit">Agregar</button>
-    </form>
+    <app-agregar [personajes]="personajes" [nuevo]="nuevo"></app-agregar>
   </div>
 </div>
